@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
+import axios from "axios";
+import { useState,useEffect } from 'react';
 const Parentlist = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => {
@@ -11,6 +13,14 @@ const Parentlist = () => {
     const handleClose = () => {
         setOpen(false);
     };
+    const[users,setUsers]=useState([]);
+    useEffect(()=>{
+        fetch('https://growtogether-production.up.railway.app/api/users/')
+        .then(res=>{console.log(res);
+})
+    },[users])
+
+   console.log(users);
 
     return (
         <div>
@@ -30,6 +40,16 @@ const Parentlist = () => {
                             </div>
                             <div className='flex justify-center'>
                                 <p className='text-4xl mb-16 font-bold py-4 underline'>Parent List</p>
+                                <ol>
+                                {users.map( user=>{
+                    return(
+                       <li key={user.email}>
+                        {user.email}{user.first_name}{user.last_name}</li>
+                         )
+                        }
+                        )
+                        }
+                                </ol>
                             </div>
 
                         </content>
