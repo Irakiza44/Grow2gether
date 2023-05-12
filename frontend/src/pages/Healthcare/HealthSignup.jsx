@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import DoctorNav from '../../components/DoctorNav'
 import { Link } from 'react-router-dom'
+import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 
 const HealthSignup = () => {
   return (
     <div>
-      <DoctorNav />
+      <Header />
       <body className=''>
         <div className="healthbg flex justify-center  pt-8 h-screen">
         <content className="flex  flex-col items-center bg-white healthlog rounded-3xl h-4/5">
@@ -22,6 +23,7 @@ const HealthSignup = () => {
         </content>
         </div>
       </body>
+      <Footer/>
     </div>
   )
 }

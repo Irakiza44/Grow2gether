@@ -24,7 +24,7 @@ const Message = () => {
             >
                 <Box className="mt-32 w-auto ">
 
-                <div className="flex  pt-8 h-auto justify-center">
+                <div className="flex  pt-8 h-auto justify-end ">
                     <content className="flex  bg-white h-auto w-11/12 mb-8 py-6">
                         <aside className='w-4/12'>
                             <div className='bg-gray-300 m-4 rounded-lg flex gap-4'>
