@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { Link } from 'react-router-dom';
 import prof from '../../img/profile.png'
+import { FaTimes } from 'react-icons/fa';
 
 const Message = () => {
     const [open, setOpen] = React.useState(false);
@@ -24,8 +25,11 @@ const Message = () => {
             >
                 <Box className="mt-32 w-auto ">
 
-                <div className="flex  pt-8 h-auto justify-end ">
-                    <content className="flex  bg-white h-auto w-11/12 mb-8 py-6">
+                <div className="flex  pt-12 h-auto justify-end pr-20">
+                    <content className="flex flex-col bg-white h-auto mb-8 p-6 w-9/12">
+                    <div className='flex justify-end'>
+                                <button onClick={handleClose} className=' rounded-3xl   text-white '><FaTimes className='text-red-500 text-2xl' /></button>
+                            </div>
                         <aside className='w-4/12'>
                             <div className='bg-gray-300 m-4 rounded-lg flex gap-4'>
                                 <img src={prof} alt='profile' className='rounded-full w-20 h-20 p-4' />

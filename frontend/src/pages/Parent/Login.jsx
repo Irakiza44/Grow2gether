@@ -35,7 +35,7 @@ const Login = () => {
       <div className="login h-full py-4 text-xl font-normal">
         <form className=" rounded-3xl flex flex-col justify-center items-center  mx-auto h-5/6 p-4 bg-white w-4/12 " onSubmit={handleSubmit}>
           <h1 className="font-semibold text-3xl text-center justify-center text-black mb-4">WELCOME</h1>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="text">User Name</label>
           <input
             type="email"
             className="border w-fit p-1 rounded-xl bg-gray-200"

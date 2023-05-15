@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -7,12 +7,13 @@ const HealthLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const navigate = useNavigate(); // initialize navigate
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://growtogether-production.up.railway.app/api/doctor/login/', {
+      const response = await fetch('https://growtogether-production.up.railway.app/api/doctor/login/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -27,9 +28,7 @@ const HealthLogin = () => {
         throw new Error('Invalid credentials');
       }
 
-      const data = await response.json();
-      const token = data.token;
-      // TODO: store the token in local storage or a state management library
+      navigate('/HealthHome'); // navigate to health_home page
     } catch (error) {
       setError(error.message);
     }
@@ -67,4 +66,4 @@ const HealthLogin = () => {
   )
 }
 
-export default HealthLogin
+export default HealthLogin;

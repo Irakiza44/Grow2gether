@@ -15,17 +15,17 @@ const Appointmentlist = () => {
 
     return (
         <div>
-            <Link onClick={handleOpen}>Appointmentlist</Link>
+            <Link onClick={handleOpen}>Appointment List</Link>
             <Modal
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="parent-modal-title"
                 aria-describedby="parent-modal-description"
             >
-                <Box className="mt-32 w-auto ">
+                <Box className="mt-32 w-auto rounded-2xl">
 
-                    <div className="flex justify-center pt-8">
-                        <content className="flex flex-col bg-white h-auto w-11/12 p-6">
+                    <div className="flex justify-end pt-12 pr-20 ">
+                        <content className="flex flex-col bg-white h-auto w-9/12 p-6">
                             <div className='flex justify-end'>
                                 <button onClick={handleClose} className=' rounded-3xl   text-white '><FaTimes className='text-red-500 text-2xl' /></button>
                             </div>

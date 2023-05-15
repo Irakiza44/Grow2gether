@@ -6,10 +6,10 @@ import Footer from '../../components/Footer'
 
 const Contactus = () => {
   return (
-    <div>
+    <div className=''>
       <Header />
-      <body className='flex justify-center my-16'>
-        <div className='w-1/2  flex h-auto  bg-gray-300 py-8 px-16'>
+      <body className=' flex justify-center my-16'>
+        <div className='w-auto flex h-auto  bg-gray-300 py-8 px-16'>
             <aside className='w-1/2 flex flex-col gap-8'>
                 <h1 className='text-2xl flex justify-center'>Leave us a Message</h1>
                 <p className='flex text-center mr-8 text-lg'>Fill out this form we will reach out to you within 24 hours</p>

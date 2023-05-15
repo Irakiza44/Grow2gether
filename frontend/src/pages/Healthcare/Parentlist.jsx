@@ -23,8 +23,8 @@ const Parentlist = () => {
             >
                 <Box className="mt-32 w-auto ">
 
-                    <div className="flex justify-center pt-2">
-                        <content className="bg-white h-auto w-11/12 ">
+                    <div className="flex justify-end pt-12 pr-20">
+                        <content className="bg-white h-auto w-9/12 ">
                             <div className='flex justify-end'>
                                 <button onClick={handleClose} className=' rounded-3xl px-5 py-1 text-white '><FaTimes className='text-red-500 text-2xl'/></button>
                             </div>
