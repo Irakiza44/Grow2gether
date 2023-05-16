@@ -4,17 +4,39 @@ import Footer from '../../components/Footer';
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isChecked, setIsChecked] = useState(false);
+  const [username, setUsername] = useState('');
+  const [error, setError] = useState(null);
+  const navigate = useNavigate(); // initialize navigate
 
-  const handleSubmit = (event) => {
+
+  const handleSubmit = async(event) => {
     event.preventDefault();
+
+    try {
+      const response = await fetch('https://growtogether-production.up.railway.app/api/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username,
+          password
+        })
+      });
+      if (!response.ok) {
+        throw new Error('Invalid credentials');
+      }
+      navigate('/Umubyeyidash'); 
+    } catch (error) {
+      setError(error.message);
+    }
 
   };
 
@@ -25,6 +47,7 @@ const Login = () => {
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
   };
+
   const handleLoginClick = () => { };
 
   return (
@@ -37,12 +60,10 @@ const Login = () => {
           <h1 className="font-semibold text-3xl text-center justify-center text-black mb-4">WELCOME</h1>
           <label htmlFor="text">User Name</label>
           <input
-            type="email"
+            type="text"
             className="border w-fit p-1 rounded-xl bg-gray-200"
-            id="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
             required
+            id="username" value={username} onChange={(event) => setUsername(event.target.value)}
           /><br />
 
           <label htmlFor="password">Password</label>
@@ -74,12 +95,12 @@ const Login = () => {
             <label for="terms" className=" text-xs "> I agree to Terms and contitions</label>
           </div>
           <div className=" mx-auto">
-            <Link to="/Umubyeyidash" >  <button
+             <button
               disabled={!isChecked}
               onClick={handleLoginClick}
               className="bg-green-800 rounded-3xl content-center px-4 w-28 text-white p-2">
               Login
-            </button></Link>
+            </button>
           </div>
         </form>
       </div>

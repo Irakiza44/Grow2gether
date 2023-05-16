@@ -9,6 +9,7 @@ import HealthRegist from '../Healthcare/HealthRegist'
 import Message from '../Healthcare/Message'
 import Appointmentlist from '../Healthcare/Appointmentlist'
 import { Link } from 'react-router-dom'
+import { FaUserPlus } from 'react-icons/fa';
 const HealthHome = () => {
     return (
         <div>
@@ -19,8 +20,8 @@ const HealthHome = () => {
                         <ul className='  doctornav rounded-3xl  flex flex-col justify-center pl-20 py-32'>
                         <img src={prof} alt='profile' className='rounded-full w-20 h-20 p-4 ml-10' />
                         <p>doctor@gmail.com</p>
-                            <li className='mt-12 font-semibold'>
-                                <HealthRegist />
+                            <li className='mt-12 font-semibold flex gap-2'>
+                                <FaUserPlus/> <HealthRegist />
 
                             </li>
                             <li className='mt-12 font-semibold'>

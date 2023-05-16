@@ -10,6 +10,7 @@ const HealthSignup = () => {
     email: '',
     full_name: '',
     password: '',
+    confirm_password: "",
    
   });
 
@@ -42,6 +43,7 @@ const HealthSignup = () => {
               <input type="text" name="email" placeholder="Email" className="border border-black py-2 px-8 rounded-2xl" onChange={handleInputChange} />
               <input type="text" name="full_name" placeholder="Full Name" className="border border-black py-2 px-8 rounded-2xl" onChange={handleInputChange} />
               <input type="password" name="password" placeholder="Password" className="border border-black py-2 px-8 rounded-2xl" onChange={handleInputChange} />
+              <input type="password" name="confirm_password" placeholder="Conform Password" className="border border-black py-2 px-8 rounded-2xl" onChange={handleInputChange} />
               
               <button type="submit" className="bg-green-800 p-1 text-white rounded-2xl m-12">Create Account</button>
             </form>
