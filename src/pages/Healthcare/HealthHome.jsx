@@ -10,6 +10,8 @@ import Message from '../Healthcare/Message'
 import Appointmentlist from '../Healthcare/Appointmentlist'
 import { Link } from 'react-router-dom'
 import { FaUserPlus } from 'react-icons/fa';
+import { AiFillMessage } from "react-icons/ai";
+import { BsPeople, BsPersonLinesFill } from "react-icons/bs";
 const HealthHome = () => {
     return (
         <div>
@@ -24,14 +26,14 @@ const HealthHome = () => {
                                 <FaUserPlus/> <HealthRegist />
 
                             </li>
-                            <li className='mt-12 font-semibold'>
-                                <Message />
+                            <li className='mt-12 font-semibold flex gap-2'>
+                               <AiFillMessage/> <Message />
                             </li>
-                            <li className='mt-12 font-semibold'>
-                                <Appointmentlist />
+                            <li className='mt-12 font-semibold flex gap-2'>
+                                <BsPersonLinesFill/> <Appointmentlist />
                             </li>
-                            <li className='mt-12 font-semibold'>
-                                <ParentList />
+                            <li className='mt-12 font-semibold flex gap-2'>
+                            <BsPeople/> <ParentList />
                             </li>
 
                             <li className='underline mt-12 font-semibold'>

@@ -83,7 +83,7 @@ const HealthLogin = () => {
                 {isLoading ? 'Loading...' : 'Log In'}
               </button>
 
-              {error && <div className='text-red-700 text-center my-4'>{error}</div>}
+              {error && <div className='text-red-700 text-center my-4 text-2xl'>{error}</div>}
 
               <Link to="/HealthSignup">
                 <p className='font-bold'>

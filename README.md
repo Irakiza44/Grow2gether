@@ -1,150 +1,70 @@
-# Growtogether API Project
+# Getting Started with Create React App
 
-This is a Growtogether API Project based on Django REST Framework. This API features five types of users - Doctor, woman and Admin, Receptionist and Consultator.
-For authenticating user, Django REST Framework custom token authentication is used. Installation guide, API endpoints and sample request/response are given below.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Please follow the below steps to install this application-
+## Available Scripts
 
-1. Install python 3.8 above and virtualenv.
-2. Clone this repository- https://github.com/Angemichel12/growtogether.git
-3. Then go to the growtogether directory: cd backend
-4. Create virtualenv: virtualenv venv(on window), python3.9 -m venv venv(on mac) (This will create a virtual environment and install all depedencies).
-5. Activate the virtual environment: venv/Scripts/actavate(on window), source venv/bin/activate(on mack)
-6. Run the app: python manage.py runserver
-7. Then create a superuser: python manage.py createsuperuser
-8. Then go to Django admin- http://localhost:8000/admin/ and create some patients,doctors, admins and appointments to test the API.
+In the project directory, you can run:
 
-## Endpoints
+### `npm start`
 
-### 1. Doctor:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- api/doctor/registration/
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## Sample API Request and Response
+### `npm test`
 
-**POST api/doctor/registration/**
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Details: API endpoint for creating new doctor account.
+### `npm run build`
 
-request body:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```json
-{
-  "user_data": {
-    "username": "doctor5",
-    "email": "doctor@gmail.com",
-    "first_name": "Dr. Deal",
-    "last_name": "Walker",
-    "password": "doctoraccess1234",
-    "password2": "doctoraccess1234"
-  },
-  "profile_data": {
-    "department": "OB",
-    "phone": "7878787878",
-    "qualification": "A0",
-    "birth_date": "1983-12-03"
-  }
-}
-```
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-response body:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```json
-{
-  "user_data": {
-    "username": "doctor5",
-    "email": "doctor@gmail.com",
-    "first_name": "Dr. Deal",
-    "last_name": "Walker"
-  },
-  "profile_data": {
-    "department": "OB",
-    "phone": "7878787878",
-    "birth_date": "1983-12-03",
-    "qualification": "A0"
-  }
-}
-```
+### `npm run eject`
 
-**POST api/doctor/login/**
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Details: API endpoint for doctor login. Admin needs to approve account otherwise login will not be successful.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-request body:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-```json
-{
-  "username": "doctor5",
-  "password": "doctoraccess1234"
-}
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-response body:
+## Learn More
 
-```json
-{
-  "Message": "You are login successful",
-  "token": "c8dabcf01492f84f4db5cafc9003388cdc486cb8"
-}
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-**GET api/doctor/profile/**
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Details: API endpoint for getting doctor profile details. Token authentication required
+### Code Splitting
 
-response body:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-```json
-{
-  "user_data": {
-    "username": "doctor5",
-    "email": "doctor@gmail.com",
-    "first_name": "Dr. Deal",
-    "last_name": "Walker"
-  },
-  "profile_data": {
-    "department": "OB",
-    "phone": "7878787878",
-    "birth_date": "1983-12-03",
-    "qualification": "A0"
-  }
-}
-```
+### Analyzing the Bundle Size
 
-**PUT api/doctor/profile/**
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Details: API endpoint for updating doctor profile . Token authentication required
+### Making a Progressive Web App
 
-request:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-```json
-{
-  "profile_data": {
-    "department": "OB",
-    "phone": "7878785656",
-    "birth_date": "1983-12-03",
-    "qualification": "A1"
-  }
-}
-```
+### Advanced Configuration
 
-response:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-```json
-{
-  "profile_data": {
-    "department": "OB",
-    "phone": "7878785656",
-    "birth_date": "1983-12-03",
-    "qualification": "A1"
-  }
-}
-```
+### Deployment
 
-# How to run celery worker
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-celery -A growtogether.celery worker --pool=solo -l info
+### `npm run build` fails to minify
 
-# how to run celery beat
-
-celery -A growtogether.celery beat -l info
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
