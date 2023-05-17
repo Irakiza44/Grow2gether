@@ -6,7 +6,7 @@ import im2 from '../../img/welcome2.png'
 import im3 from '../../img/welcome3.png'
 import im4 from '../../img/welcome4.png'
 import prof from '../../img/profile.png'
-import { FaBell, FaCalendar, FaRocketchat, FaUserAlt } from 'react-icons/fa';
+import { FaBell, FaCalendar, FaRocketchat } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 import status from '../../img/semester.png'
 
@@ -25,7 +25,7 @@ const Umubyeyidash = () => {
                         <p className='px-12 gap-2 flex justify-start font-bold pt-8'><FaBell /> Notification</p>
                         <Link to="/UmuSchedule"><p className='px-12 gap-2 flex justify-start font-bold pt-8'><FaCalendar />Schedule </p></Link>
                         <p className='px-12 gap-2 flex justify-start font-bold pt-8'>Request a Doctor</p>
-                        <p className='px-12 gap-2 flex justify-start font-bold pt-8'><img src={status} className='w-10' />Status </p>
+                        <p className='px-12 gap-2 flex justify-start font-bold pt-8'><img src={status} className='w-10' alt='status' />Status </p>
                          <Link to="/" className='px-12 gap-2 flex justify-start font-bold pt-8 pb-12 underline'>LogOut</Link>
                     </content>
                 </aside>

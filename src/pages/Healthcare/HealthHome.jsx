@@ -1,5 +1,4 @@
 import React from 'react'
-import TypeWriterEffect from 'react-typewriter-effect';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import prof from '../../img/profile.png'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaBell, FaCalendar, FaRocketchat, FaUserAlt } from 'react-icons/fa';
+import { FaBell, FaCalendar, FaRocketchat} from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
@@ -21,7 +21,7 @@ const UmuMessage = () => {
                         <p className='gap-2 flex justify-start font-bold pt-8'><FaBell /> Notification</p>
                         <Link to="/UmuSchedule"><p className='gap-2 flex justify-start font-bold pt-8'><FaCalendar />Schedule </p></Link>
                         <p className='gap-2 flex justify-start font-bold pt-8'>Request a Doctor</p>
-                        <p className='gap-2 flex justify-start font-bold pt-8'> <img src={status} className='w-10' /> Status </p>
+                        <p className='gap-2 flex justify-start font-bold pt-8'> <img src={status} className='w-10' alt='status'/> Status </p>
                          <Link to="/" className='gap-2 flex justify-start font-bold pt-8 pb-12 underline'>LogOut</Link>
                     </content>
                 </aside>

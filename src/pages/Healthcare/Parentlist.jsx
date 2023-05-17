@@ -12,6 +12,7 @@ const Parentlist = () => {
         setOpen(false);
     };
     const [users, setUsers] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchUsers = async () => {
@@ -19,7 +20,8 @@ const Parentlist = () => {
                 const response = await fetch('https://growtogether-production.up.railway.app/api/users/');
                 const data = await response.json();
                 setUsers(data);
-                console.log('data fetched');
+                setIsLoading(false);
+                console.log('Data fetched successfully');
             } catch (error) {
                 console.error('Error fetching users:', error);
             }
@@ -46,12 +48,15 @@ const Parentlist = () => {
                             </div>
                             <p className='text-4xl mb-8 font-bold underline text-center'>Parent List</p>
                             <div className='flex justify-center pb-12'>
-                                <ul>
-                                    {users.map(user => (
-                                        <li key={user.id}>{user.name}</li>
-                                    ))}
-                                    <li>hello 11111111111111111111111111</li>
-                                </ul>
+                                {isLoading ? (
+                                    <p>Loading...</p>
+                                ) : (
+                                    <ul>
+                                        {users.map(user => (
+                                            <li key={user.id}>{user.name}</li>
+                                        ))}
+                                    </ul>
+                                )}
                             </div>
 
                         </content>

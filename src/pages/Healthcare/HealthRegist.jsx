@@ -57,14 +57,14 @@ const HealthRegister = () => {
               <p className='text-4xl mb-16 font-bold py-4'>REGISTER A PARENT</p>
               <form className='' onSubmit={handleSignup}>
                 <label className='font-bold text-lg'>Names</label>
-                <input name="full_name" type='text' className='border-black border p-2  mb-4 mx-16'></input><br />
+                <input name="full_name" type='text' className='border-black border p-2  mb-4 mx-16' onChange={handleInputChange}></input><br />
                 <label className='font-bold text-lg'>Email</label>
                 
-                <input name="email" type='text' className='border-black border p-2  mb-4 mx-20'></input><br />
+                <input name="email" type='text' className='border-black border p-2  mb-4 mx-20' onChange={handleInputChange}></input><br />
                 <label className='font-bold text-lg'>Birth Year</label>
-                <input name="birth_date" type='text' className='border-black border p-2 mb-4 mx-10'></input><br />
+                <input name="birth_date" type='text' className='border-black border p-2 mb-4 mx-10' onChange={handleInputChange}></input><br />
                 <label className='font-bold text-lg'>Telephone</label>
-                <input  name="phone" type='text' className='border-black border p-2 mb-4 mx-10'></input><br />
+                <input  name="phone" type='text' className='border-black border p-2 mb-4 mx-10' onChange={handleInputChange}></input><br />
                 <button type="submit" className='healbtn my-12 mx-32 rounded-3xl text-lg border border-black text-white px-5 py-2 '>Register</button>
               </form>
             </content>
