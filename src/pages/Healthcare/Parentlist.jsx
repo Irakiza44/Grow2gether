@@ -14,21 +14,23 @@ const Parentlist = () => {
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const response = await fetch('https://growtogether-production.up.railway.app/api/users/');
-                const data = await response.json();
-                setUsers(data);
-                setIsLoading(false);
-                console.log('Data fetched successfully');
-            } catch (error) {
-                console.error('Error fetching users:', error);
-            }
-        };
+    const fetchUsers = async () => {
+        try {
+            const response = await fetch('https://growtogether-production.up.railway.app/api/users/');
+            const data = await response.json();
+            setUsers(data);
+            setIsLoading(false);
+            
+        } catch (error) {
+            console.error('Error fetching users:', error);
+        }
+    };
 
+    useEffect(() => {
         fetchUsers();
-    }, []);
+    }, [users]);
+
+    console.log(users);
 
     return (
         <div>
@@ -48,12 +50,14 @@ const Parentlist = () => {
                             </div>
                             <p className='text-4xl mb-8 font-bold underline text-center'>Parent List</p>
                             <div className='flex justify-center pb-12'>
-                                {isLoading ? (
+                                {isLoading? (
                                     <p>Loading...</p>
                                 ) : (
-                                    <ul>
-                                        {users.map(user => (
-                                            <li key={user.id}>{user.name}</li>
+                                    <ul className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3 p-3'>
+                                        {users.map((user,index) => (
+                                           <li className='bg-white mt-6 p-6 shadow-xl' key={index}><span className=' text-2xl font-bold'>Names: </span><span className='text-xl mr-2'>{user.first_name}</span>
+                                            <span className='text-xl mr-2'>{user.last_name}</span><br></br> 
+                                            <span className='mr-4 text-2xl font-bold'>Email:</span> <span className='text-xl'>{user.email}</span></li>
                                         ))}
                                     </ul>
                                 )}
