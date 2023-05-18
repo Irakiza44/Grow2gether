@@ -24,7 +24,7 @@ const Umubyeyidash = () => {
                         <Link to="/UmuMessage"><span className='px-12 gap-2 pt-4 flex justify-start font-bold'><FaRocketchat /> Messages </span></Link>
                         <p className='px-12 gap-2 flex justify-start font-bold pt-8'><FaBell /> Notification</p>
                         <Link to="/UmuSchedule"><p className='px-12 gap-2 flex justify-start font-bold pt-8'><FaCalendar />Schedule </p></Link>
-                        <p className='px-12 gap-2 flex justify-start font-bold pt-8'>Request a Doctor</p>
+                        <Link to="/Appointment"><p className='px-12 gap-2 flex justify-start font-bold pt-8'>Request a Doctor</p></Link> 
                         <p className='px-12 gap-2 flex justify-start font-bold pt-8'><img src={status} className='w-10' alt='status' />Status </p>
                          <Link to="/" className='px-12 gap-2 flex justify-start font-bold pt-8 pb-12 underline'>LogOut</Link>
                     </content>

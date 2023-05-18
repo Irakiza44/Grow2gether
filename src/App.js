@@ -15,6 +15,7 @@ import Contactus from "./pages/Parent/Contactus";
 import Umubyeyiforg from "./pages/Parent/Umubyeyiforg";
 import Umubyeyisent from "./pages/Parent/Umubyeyisent";
 import HealthSignup from "./pages/Healthcare/HealthSignup";
+import Appointment from "./pages/Parent/Appointment"
 function App() {
   return (
     <div className="App">
@@ -34,6 +35,7 @@ function App() {
         <Route path="/umubyeyiforg" element={<Umubyeyiforg/>}/>
         <Route path="/umubyeyisent" element={<Umubyeyisent/>}/>
         <Route path="/healthSignup" element={<HealthSignup/>}/>
+        <Route path="/Appointment" element={<Appointment/>}/>
         
       </Routes>
     </div>

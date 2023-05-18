@@ -57,7 +57,9 @@ const Parentlist = () => {
                                         {users.map((user,index) => (
                                            <li className='bg-white mt-6 p-6 shadow-xl' key={index}><span className=' text-2xl font-bold'>Names: </span><span className='text-xl mr-2'>{user.first_name}</span>
                                             <span className='text-xl mr-2'>{user.last_name}</span><br></br> 
-                                            <span className='mr-4 text-2xl font-bold'>Email:</span> <span className='text-xl'>{user.email}</span></li>
+                                            <span className='mr-4 text-2xl font-bold'>Email:</span> <span className='text-xl'>{user.email}</span>
+                                            <span className='flex justify-between gap-8 p-4'><button className='bg-red-600 px-3 py-1 rounded-xl font-bold'>Delete</button>
+                                            <button className='bg-blue-500 px-3 py-1 rounded-xl font-bold'>Update</button></span></li>
                                         ))}
                                     </ul>
                                 )}
